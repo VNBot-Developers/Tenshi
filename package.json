@@ -1,0 +1,26 @@
+{
+  "name": "tenshi-chan",
+  "version": "0.1.0",
+  "description": "Self Bot For Facebook",
+  "main": "index.coffee",
+  "scripts": {
+    "step1": "coffee login.coffee",
+    "step2": "coffee ./src/index.coffee",
+    "start": "npm run dev-win",
+    "dev-win": "npm run step1 & npm run step2"
+  },
+  "keywords": [
+    "Self",
+    "bot",
+    "facebook"
+  ],
+  "author": "gr33ntii",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "cheerio": "^1.0.0-rc.2",
+    "facebook-chat-api": "github:Schmavery/facebook-chat-api",
+    "moment": "^2.21.0",
+    "request": "^2.83.0"
+  }
+}
