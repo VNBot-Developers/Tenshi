@@ -32,7 +32,7 @@ login {
 
   api.setOptions {
   selfListen: true
-  logLevel: 'warn' }
+  logLevel: 'silent' }
   stop = api.listen((err, msg) ->
     if err
       return console.error(err)
