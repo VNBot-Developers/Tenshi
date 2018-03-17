@@ -42,7 +42,7 @@ login {
 
     #function_start
   GraphAvatarUser = ->
-    avatarurl = "https://graph.facebook.com"
+    avatarurl = "https://graph.facebook.com" #not_finish WIP
     #function_end
 
     if msg.body.indexOf("#{p}search") is 0
@@ -79,7 +79,7 @@ login {
             }
             api.sendMessage animehot , msg.threadID
             fs.unlink './src/img/anime' + index.toString() + '.jpg', (err) ->
-    else if msg.body == "#{p}avatar"
-      GraphAvatarUser()
+    else if msg.body == "#{p}ping"
+      api.sendMessage "Pong~", msg.threadID
       return
   )

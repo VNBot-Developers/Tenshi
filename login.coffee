@@ -1,8 +1,9 @@
 fs          = require('fs')
 login       = require('facebook-chat-api')
+config      = require('./config.json')
 login {
-  email: 'xolzsec@8chan.co'
-  password: 'gr33ntiiizme'
+  email: config.username
+  password: config.password
 }, (err, api) ->
   if err
     return console.error(err)
