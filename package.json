@@ -6,7 +6,9 @@
   "scripts": {
     "step1": "coffee login.coffee",
     "step2": "coffee ./src/index.coffee",
+    "step3": "coffee ./src/beta.coffee",
     "start": "npm run dev-win",
+    "group" : "npm run step1 & npm run step3",
     "dev-win": "npm run step1 & npm run step2"
   },
   "keywords": [
