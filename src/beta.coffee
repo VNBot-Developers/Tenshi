@@ -31,8 +31,6 @@ login { appState: JSON.parse(fs.readFileSync('appstate.json', 'binary')) }, (err
   stop = api.listen(((err, msg) ->
     if err
       return console.error(err)
-    if msg.senderID != api.getCurrentUserID();
-      return
     if msg.body.indexOf(p + 'search') == 0
       string = msg.body.slice(7, msg.body.length).trim()
       text = string.split(' ').join('+')

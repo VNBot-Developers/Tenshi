@@ -5,9 +5,9 @@ cheerio     = require('cheerio')
 animeHot = ->
   crawled = []
   new Promise((resolve, reject) ->
-    op = {
+    op =
       url: 'http://vuighe.net'
-      method: 'GET' }
+      method: 'GET'
     so = 0
     request op, (err, res, body) ->
       $ = cheerio.load(body)

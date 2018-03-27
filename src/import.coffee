@@ -6,5 +6,5 @@ animeNews   = ->
 animeHot    = ->
   animehot.animeHot()
 
-module.exports.animeNews = animeNews
-module.exports.animeHot  = animeHot
+module.exports.animeNews  = animeNews
+module.exports.animeHot   = animeHot
