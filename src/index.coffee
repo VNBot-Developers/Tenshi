@@ -19,8 +19,6 @@ if !fs.existsSync(path.join(__dirname, '../appstate.json'))
 login { appState: JSON.parse(fs.readFileSync('appstate.json', 'binary')) }, (err, api) ->
   if err
     return console.log(err)
-  if msg.senderID != api.getCurrentUserID()
-    return
   console.log chalk.green('TenShi Bot Is Runing')
   console.log chalk.blue('Logged as https://fb.com/' + api.getCurrentUserID())
   console.log chalk.red('Start listening!')
@@ -33,6 +31,8 @@ login { appState: JSON.parse(fs.readFileSync('appstate.json', 'binary')) }, (err
   stop = api.listen(((err, msg) ->
     if err
       return console.error(err)
+    if msg.senderID != api.getCurrentUserID()
+      return
     if msg.body.indexOf(p + 'search') == 0
       string = msg.body.slice(7, msg.body.length).trim()
       text = string.split(' ').join('+')
@@ -273,19 +273,19 @@ login { appState: JSON.parse(fs.readFileSync('appstate.json', 'binary')) }, (err
       memory      = Math.round(process.memoryUsage().heapUsed / 1024 / 1024) + "MB"
       jimp.read('./src/img/stats/theme.png').then (image) ->
         jimp.loadFont('./src/font/font1/font.fnt').then (font1) ->
-           image.print font1, 350, 580, 'Tenshi Version :'
-           image.print font1, 350, 740, 'Online Time :'
-           image.print font1, 350, 920, 'Memory :'
-           jimp.loadFont('./src/font/font2/gfont.fnt').then (font2) ->
-             image.print font2, 820, 580, version
-             image.print font2, 750, 740, uptime
-             image.print font2, 650, 920, memory
-             image.write './src/img/font/stats.png', (error) ->
-               image =
-                 body: ''
-                 attachment: fs.createReadStream './src/img/font/stats.png'
-               api.sendMessage image, msg.threadID
-               fs.unlink './src/img/font/stats.png', (err) ->
+          image.print font1, 350, 580, 'Tenshi Version :'
+          image.print font1, 350, 740, 'Online Time :'
+          image.print font1, 350, 920, 'Memory :'
+          jimp.loadFont('./src/font/font2/gfont.fnt').then (font2) ->
+            image.print font2, 820, 580, version
+            image.print font2, 750, 740, uptime
+            image.print font2, 650, 920, memory
+            image.write './src/img/font/stats.png', (error) ->
+              image =
+                body: ''
+                attachment: fs.createReadStream './src/img/font/stats.png'
+              api.sendMessage image, msg.threadID
+              fs.unlink './src/img/font/stats.png', (err) ->
   ),
 
   #More mini funtion here <3

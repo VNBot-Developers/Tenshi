@@ -271,19 +271,19 @@ login { appState: JSON.parse(fs.readFileSync('appstate.json', 'binary')) }, (err
       memory      = Math.round(process.memoryUsage().heapUsed / 1024 / 1024) + "MB"
       jimp.read('./src/img/stats/theme.png').then (image) ->
         jimp.loadFont('./src/font/font1/font.fnt').then (font1) ->
-           image.print font1, 350, 580, 'Tenshi Version :'
-           image.print font1, 350, 740, 'Online Time :'
-           image.print font1, 350, 920, 'Memory :'
-           jimp.loadFont('./src/font/font2/gfont.fnt').then (font2) ->
-             image.print font2, 820, 580, version
-             image.print font2, 750, 740, uptime
-             image.print font2, 650, 920, memory
-             image.write './src/img/font/stats.png', (error) ->
-               image =
-                 body: ''
-                 attachment: fs.createReadStream './src/img/font/stats.png'
-               api.sendMessage image, msg.threadID
-               fs.unlink './src/img/font/stats.png', (err) ->
+          image.print font1, 350, 580, 'Tenshi Version :'
+          image.print font1, 350, 740, 'Online Time :'
+          image.print font1, 350, 920, 'Memory :'
+          jimp.loadFont('./src/font/font2/gfont.fnt').then (font2) ->
+            image.print font2, 820, 580, version
+            image.print font2, 750, 740, uptime
+            image.print font2, 650, 920, memory
+            image.write './src/img/font/stats.png', (error) ->
+              image =
+                body: ''
+                attachment: fs.createReadStream './src/img/font/stats.png'
+              api.sendMessage image, msg.threadID
+              fs.unlink './src/img/font/stats.png', (err) ->
   ),
 
   #More mini funtion here <3
