@@ -1,7 +1,5 @@
 # Tenshi
-Tenshi Facebook - Coffeescript {BETA -> WORK IN PROCESS}
-
-**/ĐÂY LÀ BOT CÁ NHÂN, CHỈ BẠN MỚI SỬ DỤNG ĐƯỢC/**
+Tenshi Facebook - Coffeescript 
 
 edit file config.js
 
