@@ -251,7 +251,7 @@ login { appState: JSON.parse(fs.readFileSync('appstate.json', 'binary')) }, (err
       )
     else if msg.body.indexOf(p + 'whatanime') is 0
       request()
-    else if msg.body.indexOf(p + 'del' or p + 'remove') is 0
+    else if msg.body.indexOf(p + 'del') is 0
       victim = 'https://graph.facebook.com/' + Object.keys(msg.mentions) + '/picture?type=large&redirect=true&width=135&height=145'
       write1 = fs.createWriteStream('./src/img/del/victim.jpg')
       request(victim).pipe write1
