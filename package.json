@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.3.2",
-    "cheerio": "^1.0.0-rc.2",
+    "cheerio": "^1.0.0-rc.12",
     "express": "^4.16.3",
     "facebook-chat-api": "github:Schmavery/facebook-chat-api",
     "jimp": "^0.2.28",
